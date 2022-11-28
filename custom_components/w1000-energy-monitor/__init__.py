@@ -271,12 +271,11 @@ class w1k_API:
                         )
 
                     if value > 0:
+                        lasttime = data['time']
                         if delta_values:
                             lastvalue = round(hourly_sum,3)
-                            lasttime = data['time']
                         else:
                             lastvalue = round(value,1)
-                            lasttime = data['time']
 
                 ret.append( {'curve':window['name'], 'last_value':lastvalue, 'unit':window['unit'], 'last_time':lasttime} )
                 
